@@ -1,0 +1,671 @@
+/*
+
+    1st Skill == transitions;
+    2nd Skill == rely transitions & transformatuions;
+    3rd Skill == if you rotate any item, his (repère المعلم) rotate also;
+    4th Skill == how to aply many transformations on an item;
+
+*/
+
+/* Start Common Style */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    width: 850px;
+    position: relative;
+    margin: auto;
+}
+
+.image {
+    height: 250px;
+    width: 400px;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+    cursor: default;
+    position: relative;
+    border-radius: 5px;
+    border: 5px rgb(136, 136, 136) solid;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+}
+
+.image .hover-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.image .hover-elements header {
+    font-size: 30px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(219, 127, 8, 0.8);
+    margin-top: 20px;
+}
+
+.image .hover-elements p {
+    height: 100px;
+    width: 350px;
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.image .hover-elements button {
+    height: 30px;
+    width: 100px;
+    background: none;
+    border: 2px white solid;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: -100px;
+}
+
+.image .hover-elements button:hover {
+    background-color: #fff;
+    color: rgb(58, 58, 58);
+}
+
+/* End Common Style */
+
+/* Start Animation Hover Effect 1 */
+
+#image1 img {
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+#image1 .hover-elements {
+    transition: 0.4s;
+    opacity: 0;
+}
+
+#image1 .hover-elements header {
+    transition: 0.3s;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+#image1 .hover-elements p {
+    transform: translateY(100px);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#image1 .hover-elements button {
+    opacity: 0;
+}
+
+#image1:hover img {
+    transition: 0.3s;
+    transform: scale(1.1, 1.1);
+}
+
+#image1:hover .hover-elements {
+    opacity: 1;
+}
+
+#image1:hover .hover-elements header {
+    transition-delay: 0.2s;
+    transition: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image1:hover .hover-elements p {
+    transition: 0.3s;
+    transition-delay: 0.2s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image1:hover .hover-elements button {
+    transition: 0.3s;
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 1 */
+
+/* Start Animation Hover Effect 2 */
+
+#image2 .hover-elements {
+    background: none;
+    opacity: 0;
+}
+
+#image2 .mask {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.3;
+    transform: rotate(-45deg) scale(1.5, 2) translateY(150px);
+    opacity: 0;
+}
+
+#image2 .hover-elements header {
+    transition: 0.3s;
+    transform: translate(100px, -100px);
+    opacity: 0;
+}
+
+#image2 .hover-elements p {
+    transition: 0.3s;
+    transform: translate(-100px, 100px);
+    opacity: 0;
+}
+
+#image2 .hover-elements button {
+    transition: 0.3s;
+    transform: translateY(70px);
+    opacity: 0;
+}
+
+#image2:hover .hover-elements {
+    opacity: 1;
+}
+
+#image2:hover .mask {
+    transition: 0.3s;
+    transform: rotate(-45deg) scale(1.5, 2) translateY(0);
+    opacity: 1;
+}
+
+#image2:hover .hover-elements header {
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+#image2:hover .hover-elements button {
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image2:hover .hover-elements p {
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 2 */
+
+/* Start Animation Hover Effect 3 */
+
+#image3 {
+    overflow: hidden;
+}
+
+#image3 .hover-elements {
+    transition: 0.2s;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+}
+
+#image3 .hover-elements header {
+    transition: 0.3s;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+#image3 .hover-elements p {
+    transition: 0.3s;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+}
+
+#image3 .hover-elements button {
+    transition: 0.3s;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+#image3:hover .hover-elements {
+    transition: 0.2s;
+    transform: rotate(0);
+    transform-origin: right bottom;
+}
+
+#image3:hover .hover-elements p {
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    transform: rotate(0);
+    transform-origin: right bottom;
+}
+
+#image3:hover .hover-elements header {
+    transition: 0.3s;
+    transition-delay: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image3:hover .hover-elements button {
+    transition: 0.3s;
+    transition-delay: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 3 */
+
+/* Start Animation Hover Effect 4 */
+
+#image4 img {
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#image4 .hover-elements {
+    transition: 0.5s;
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+}
+
+#image4:hover img {
+    transition: 0.5s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+#image4:hover .hover-elements {
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: rotate(0) scale(1);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 4 */
+
+/* Start Animation Hover Effect 5 */
+
+#image5 img {
+    transition: 0.5s;
+    transform: translateX(0);
+    transform-origin: left center;
+}
+
+#image5 .hover-elements {
+    transition: 0.5s;
+    transform: translateX(-390px);
+    transform-origin: right center;
+    background-color: rgba(102, 102, 102, 0.5)
+}
+
+#image5:hover img {
+    transition: 0.5s;
+    transform: translateX(390px);
+    transform-origin: left center;
+}
+
+#image5:hover .hover-elements {
+    transition: 0.5s;
+    transform: translate(0);
+    transform-origin: right center;
+}
+
+/* End Animation Hover Effect 5 */
+
+/* Start Animation Hover Effect 6 */
+
+#image6 .hover-elements {
+    transition: 0.5s;
+    opacity: 0;
+}
+
+#image6 .hover-elements header {
+    transition: 0.5s;
+    transform: scale(5);
+    opacity: 0;
+}
+
+#image6 .hover-elements p {
+    transition: 0.5s;
+    transform: scale(5);
+    opacity: 0;
+}
+
+#image6 .hover-elements button {
+    transition: 0.5s;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+#image6:hover .hover-elements {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+#image6:hover .hover-elements header {
+    transition: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#image6:hover .hover-elements p {
+    transition: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#image6:hover .hover-elements button {
+    transition: 0.5s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 6 */
+
+/* Start Animation Hover Effect 7 */
+
+#image7 img {
+    transition: 0.4s;
+    transform: rotate(0) scale(1);
+}
+
+#image7 .hover-elements {
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#image7 .hover-elements header {
+    transition: 0.3s;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+#image7 .hover-elements p {
+    transition: 0.3s;
+    transform: translateY(-70px);
+    opacity: 0;
+}
+
+#image7 .hover-elements button {
+    transition: 0.4s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+#image7:hover img {
+    transition: 0.4s;
+    transform: rotate(720deg) scale(0);
+}
+
+#image7:hover .hover-elements {
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    opacity: 1;
+}
+
+#image7:hover .hover-elements header {
+    transition: 0.3s;
+    transition-delay: 0.6s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image7:hover .hover-elements p {
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image7:hover .hover-elements button {
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 7 */
+
+/* Start Animation Hover Effect 8 */
+
+#image8 .hover-elements {
+    transition: 0.3s;
+    transition-delay: 0.6s;
+    transform: translateY(-250px);
+    transform-origin: bottom center;
+    opacity: 0;
+}
+
+#image8 .hover-elements header {
+    transition: 0.3s;
+    transform: translateY(-200px);
+    opacity: 0;
+}
+
+#image8 .hover-elements p {
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    transform: translateY(-200px);
+    opacity: 0;
+}
+
+#image8 .hover-elements button {
+    transition: 0.3s;
+    transition-delay: 0.5s;
+    transform: translateY(-200px);
+    opacity: 0;
+}
+
+#image8:hover .hover-elements {
+    transition: 0.3s;
+    transform: translateY(0);
+    animation: bounceY 0.9s linear;
+    opacity: 1;
+}
+
+@keyframes bounceY {
+    0% {
+        transform: translateY(-205px);
+    }
+
+    40% {
+        transform: translateY(-100px);
+    }
+
+    65% {
+        transform: translateY(-52px);
+    }
+
+    82% {
+        transform: translateY(-25px);
+    }
+
+    92% {
+        transform: translateY(-12px);
+    }
+
+    55%,
+    75%,
+    87%,
+    97%,
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#image8:hover .hover-elements header {
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image8:hover .hover-elements p {
+    transition: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#image8:hover .hover-elements button {
+    transition: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 8 */
+
+/* Start Animation Hover Effect 9 */
+
+#image9 .mask1 {
+    width: 490px;
+    height: 500px;
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.5);
+    transition: 0.3s;
+    transform-origin: top left;
+    transform: rotate(-32deg) translate(-20px, 219px);
+}
+
+#image9:hover .mask1 {
+    transition: 0.3s;
+    transform-origin: top left;
+    transform: rotate(-32deg) translate(-20px, 0);
+}
+
+#image9 .mask2 {
+    width: 490px;
+    height: 500px;
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.5);
+    transition: 0.3s;
+    transform-origin: top left;
+    transform: rotate(-32deg) translate(0, -720px);
+}
+
+#image9:hover .mask2 {
+    transition: 0.3s;
+    transform-origin: top left;
+    transform: rotate(-32deg) translate(-15px, -499px);
+}
+
+#image9 .hover-elements {
+    transition: 0.3s;
+    transform: rotate(-32deg) translate(-20px, -5px);
+    transform-origin: right top;
+    margin: 20px;
+    height: 0;
+    width: 90%;
+    overflow: hidden;
+}
+
+#image9:hover .hover-elements {
+    transition: 0.4s;
+    transition-delay: 0.5s;
+    transform: rotate(0) translate(0);
+    height: 90%;
+    width: 90%;
+}
+
+/* End Animation Hover Effect 9 */
+
+/* Start Animation Hover Effect 10 */
+
+#image10 img {
+    transition: 0.9s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#image10 .hover-elements {
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+#image10 .hover-elements header,
+#image10 .hover-elements p,
+#image10 .hover-elements button {
+    transition: 0.9s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+#image10:hover img {
+    transition: 0.9s;
+    transform: scale(10);
+    opacity: 0;
+}
+
+#image10:hover .hover-elements {
+    opacity: 1;
+}
+
+#image10:hover .hover-elements header,
+#image10:hover .hover-elements p,
+#image10:hover .hover-elements button {
+    transition: 0.9s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* End Animation Hover Effect 10 */
+
+/* For My Personal Brand */
+.social {
+    position: fixed;
+    bottom: 100px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px #ddd solid;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.social span {
+    margin-bottom: 10px;
+}
+
+.social button {
+    height: 50px;
+    width: 50px;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 0;
+    transition: .2s all ease-in-out;
+}
+
+.social button:hover {
+    opacity: .8;
+}
+
+.social button.twitter {
+    background-color: #1da1f2;
+}
+
+.social button.facebook {
+    background-color: #345291;
+}
+
+.social button.github {
+    background-color: #24292e;
+}
